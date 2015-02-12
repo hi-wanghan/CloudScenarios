@@ -1,0 +1,42 @@
+﻿@model ArenaTest.Models.TestCase
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TestCase</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Metrics)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metrics)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Method)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TestCaseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

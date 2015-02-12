@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ArenaTest.Models.TestView>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Test List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(tv => tv.Test.TestName)
+
+        </th>
+        <th></th>
+    </tr>
+
+    
+
+</table>
+@*@Html.ActionLink("Run", "Run", "TestRun", new { id = item.Test.TestId, tv = item }, null)*@

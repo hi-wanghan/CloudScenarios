@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ArenaTestModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ArenaTestModelsContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TestCases" EntityType="ArenaTestModels.TestCase" />
+    <EntitySet Name="TestRuns" EntityType="ArenaTestModels.TestRun" />
+    <EntitySet Name="Tests" EntityType="ArenaTestModels.Test" />
+    <AssociationSet Name="FK_TestCases_0" Association="ArenaTestModels.FK_TestCases_0">
+      <End Role="Test" EntitySet="Tests" />
+      <End Role="TestCas" EntitySet="TestCases" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TestCase">
+    <Key>
+      <PropertyRef Name="TestCaseId" />
+    </Key>
+    <Property Name="TestCaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Metrics" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Method" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TestId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Test" Relationship="ArenaTestModels.FK_TestCases_0" FromRole="TestCas" ToRole="Test" />
+  </EntityType>
+  <EntityType Name="TestRun">
+    <Key>
+      <PropertyRef Name="TestRunId" />
+    </Key>
+    <Property Name="TestRunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Platform" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TestId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="TestId" />
+    </Key>
+    <Property Name="TestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TestName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TestCases" Relationship="ArenaTestModels.FK_TestCases_0" FromRole="Test" ToRole="TestCas" />
+  </EntityType>
+  <Association Name="FK_TestCases_0">
+    <End Type="ArenaTestModels.Test" Role="Test" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="ArenaTestModels.TestCase" Role="TestCas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Test">
+        <PropertyRef Name="TestId" />
+      </Principal>
+      <Dependent Role="TestCas">
+        <PropertyRef Name="TestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

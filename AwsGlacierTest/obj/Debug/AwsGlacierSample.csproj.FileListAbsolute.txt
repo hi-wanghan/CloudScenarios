@@ -1,0 +1,8 @@
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsGlacierSample\bin\Debug\AwsGlacierSample.exe.config
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsGlacierSample\bin\Debug\AwsGlacierSample.exe
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsGlacierSample\bin\Debug\AwsGlacierSample.pdb
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsGlacierSample\bin\Debug\AWSSDK.dll
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsGlacierSample\bin\Debug\AWSSDK.pdb
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsGlacierSample\obj\Debug\AwsGlacierSample.csprojResolveAssemblyReference.cache
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsGlacierSample\obj\Debug\AwsGlacierSample.exe
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsGlacierSample\obj\Debug\AwsGlacierSample.pdb

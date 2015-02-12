@@ -1,0 +1,8 @@
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSqsPerformance\bin\Debug\AwsPerformance.dll.config
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSqsPerformance\bin\Debug\AwsPerformance.dll
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSqsPerformance\bin\Debug\AwsPerformance.pdb
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSqsPerformance\bin\Debug\AWSSDK.dll
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSqsPerformance\bin\Debug\AWSSDK.pdb
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSqsPerformance\obj\Debug\AwsPerformance.csprojResolveAssemblyReference.cache
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSqsPerformance\obj\Debug\AwsPerformance.dll
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSqsPerformance\obj\Debug\AwsPerformance.pdb

@@ -1,0 +1,7 @@
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSimpleDBAsyncSample\bin\Debug\AwsSimpleDBAsyncSample.exe.config
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSimpleDBAsyncSample\bin\Debug\AwsSimpleDBAsyncSample.exe
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSimpleDBAsyncSample\bin\Debug\AwsSimpleDBAsyncSample.pdb
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSimpleDBAsyncSample\bin\Debug\AWSSDK.dll
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSimpleDBAsyncSample\bin\Debug\AWSSDK.pdb
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSimpleDBAsyncSample\obj\Debug\AwsSimpleDBAsyncSample.exe
+C:\2014\Rotation 2\The Cloud Arena\The Cloud Arena\AwsSimpleDBAsyncSample\obj\Debug\AwsSimpleDBAsyncSample.pdb

@@ -1,0 +1,9 @@
+﻿@model ArenaTest.Models.TestView
+
+<h2>TestRunId: @Html.DisplayFor(model => model.TestRunId) submitted</h2>
+
+
+<p>@Html.ActionLink("Back to Test List", "Index", "Test")</p>
+
+
+<p>@Html.ActionLink("Query the TestResult", "Index", "TestResult", new { testid = @Model.TestId, testRunId = @Model.TestRunId, testName = @Model.selectedTest }, null)</p>

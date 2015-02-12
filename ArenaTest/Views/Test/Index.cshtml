@@ -1,0 +1,107 @@
+﻿@*Use ViewBag and model data to generate dropdownlist in View
+        http://www.asp.net/mvc/tutorials/mvc-5/introduction/adding-search
+        Pass Selected DropdownList Item back to Controller
+        http://stackoverflow.com/questions/21075263/pass-selected-dropdown-list-value-from-view-to-controller
+        Bootstrap and DropdownList
+        http://forums.asp.net/t/1975424.aspx?Bootstrap+3+theme+form+MVC+5+Dropdownlist
+    Classic WebPage color:  http://www.docin.com/p-8118064.html
+            <tr><td style="text-align:left">
+                    <h2>@Html.LabelFor(modelItem => modelItem.AwsChecked, new {@class = "label label-warning" })</h2>
+                </td></tr>
+            <tr><td style="text-align:left"><h2>@Html.LabelFor(modelItem => modelItem.GoogleChecked, new { @class = "label label-info" })</h2></td>
+
+*@
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ArenaTest.Models.TestView
+
+@{
+    ViewBag.Title = "Cloud Arena";
+}
+
+<head>
+    <title>Built by Han</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+    </script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#tlist").change(function () {
+
+                var name = $('#tlist :selected').text();
+                var index = $('#tlist :selected').index();
+
+                $.ajax({
+
+                    url: "/Test/GetDescription/" + "name=" + name,
+                    type: 'POST',
+                    data: { name: $('#tlist :selected').text() },
+                    success: function (data) {
+                        $("#description").text(data.desc);
+                        $("#description").css("color", "white");
+                    },
+                    error: function () {
+                        $("#description").text("baby, no description for the test");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</head>
+
+
+
+<h2>Open Source on Cloud</h2>
+
+
+<body style="background-color:white">
+
+    @using (Html.BeginForm("Run", "TestRun", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <div>
+            <table class="lite-1" align="left" border="0">
+                <tr id="han" >
+                    <td id="hide" bgcolor="#CCCCCC" style="text-align: left">@Html.DropDownListFor(modelItem => modelItem.selectedTest, Model.GetAllTests(), new { @id = "tlist" })</td>
+                    <td id="description" rowspan="5" align="left" bgcolor="#666666" style="width:80%">
+                        <font color="white"> @Model.TestDescriptions.ElementAt(0).Value </font></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left" bgcolor="#CCCCCC">
+                        @Html.CheckBoxFor(modelItem => modelItem.AzureChecked, new { @class = "switch switch-large", @type = "checkbox" }) Azure
+                        <span class="glyphicon glyphicon-cloud"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="text-align:left" bgcolor="#CCCCCC">
+                        @Html.CheckBoxFor(modelItem => modelItem.AwsChecked, new { @class = "switch switch-large", @type = "checkbox" }) Aws
+                        <span class="glyphicon glyphicon-fire"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" bgcolor="#CCCCCC">
+                        @Html.CheckBoxFor(modelItem => modelItem.GoogleChecked, new { @class = "switch switch-large", @type = "checkbox" }) Google
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align:left" bgcolor="#CCCCCC">
+
+                        <input type="submit" value=" Compare " class="btn-lg btn-primary">
+
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    }
+
+</body>

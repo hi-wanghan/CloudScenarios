@@ -1,0 +1,56 @@
+﻿<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ArenaTest.Models.ResultForView
+
+@{
+    ViewBag.Title = "TestResult";
+    var val = Json.Encode(Model);
+
+}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+
+
+
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+
+            $.ajax({
+
+                url: 'Chart/DrawChart',
+                type: 'POST',
+                data: JSON.stringify(@Html.Raw(val)),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    alert(data);
+                }
+            });
+
+        })
+    });
+</script>
+
+<p>
+    @*invoke the Query Method in the TestResultController*@
+    @using (Html.BeginForm("Query", "TestResult", FormMethod.Get))
+    {
+    <h2>Test: @Html.Label(Model.TestName)  </h2>
+    <p>@Html.ActionLink("Back to Test List", "Index", "Test")</p>
+
+    <p>    
+        TestId: @Html.TextBox("testId")
+
+        TestRunId: @Html.TextBox("testRunId")
+
+        <button id="btnSubmit" type="submit" class="btn btn-primary">Query</button>
+
+    </p>
+    }
+
+    <p></p>
+
+
+

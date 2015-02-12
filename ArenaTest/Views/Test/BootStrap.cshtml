@@ -1,0 +1,67 @@
+﻿@model ArenaTest.Models.Test
+
+    <!-- Bootstrap core CSS -->
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="../../dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<div class="page-header">
+    <h1>Buttons</h1>
+</div>
+<p>
+    <button type="button" class="btn btn-lg btn-default">Execute</button>
+    <button type="button" class="btn btn-lg btn-primary">hi baby</button>
+    <button type="button" class="btn btn-lg btn-success">Success</button>
+    <button type="button" class="btn btn-lg btn-info">Info</button>
+    <button type="button" class="btn btn-lg btn-warning">Warning</button>
+    <button type="button" class="btn btn-lg btn-danger">Danger</button>
+    <button type="button" class="btn btn-lg btn-link">Link</button>
+</p>
+<p>
+    <button type="button" class="btn btn-danger">Primary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-link">Link</button>
+</p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Test</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TestName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TestName)
+                @Html.ValidationMessageFor(model => model.TestName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,54 @@
+﻿<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ArenaTest.Models.ResultForView
+
+@{
+    ViewBag.Title = "TestResult";
+    var val = Json.Encode(Model);
+
+}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+
+    $(document).ready(function () {
+        $("#bquery").click(function (e) {
+            e.preventDefault();
+            $.ajax({
+
+                url: 'Chart/DrawChart',
+                type: 'POST',
+                data: JSON.stringify(@Html.Raw(val)),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    //change the image src attribute
+                }
+            });
+
+        })
+    });
+</script>
+
+
+<h2>Test: @Html.Label(Model.TestName)  </h2>
+<p>@Html.ActionLink("Back to Test List", "Index", "Test")</p>
+
+<p>
+    TestId: @Html.TextBox("testId")
+    TestRunId: @Html.TextBox("testRunId")
+    <button id="bquery" type="submit" class="btn btn-primary">Query</button>
+</p>
+
+@using (Html.BeginForm("DrawChart", "Chart", FormMethod.Get))
+{
+    <img src="/Chart/DrawChart?&chartKey=@Model.PKey&&name=@Model.TestName&allTdName=@Model.AllTdName&allValue=@Model.AllValue" alt="default.png" />
+}
+<canvas id="myChart" width="400" height="400"></canvas>
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ArenaTestModelsStoreContainer" CdmEntityContainer="ArenaTestModelsContainer">
+    <EntitySetMapping Name="TestCases">
+      <EntityTypeMapping TypeName="ArenaTestModels.TestCase">
+        <MappingFragment StoreEntitySet="TestCases">
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="Metrics" ColumnName="Metrics" />
+          <ScalarProperty Name="TestCaseId" ColumnName="TestCaseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestRuns">
+      <EntityTypeMapping TypeName="ArenaTestModels.TestRun">
+        <MappingFragment StoreEntitySet="TestRuns">
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="TestRunId" ColumnName="TestRunId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tests">
+      <EntityTypeMapping TypeName="ArenaTestModels.Test">
+        <MappingFragment StoreEntitySet="Tests">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TestName" ColumnName="TestName" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
