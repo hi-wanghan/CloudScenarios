@@ -66,7 +66,7 @@ namespace AwsS3FileSystemSample1
                         writer.WriteLine("    {");
                         writer.WriteLine("        static void Main(string[] args)");
                         writer.WriteLine("        {");
-                        writer.WriteLine("            Console.WriteLine(\"Hello World\");");
+                        writer.WriteLine("            Console.WriteLine(\"Hi Han, what's up\");");
                         writer.WriteLine("        }");
                         writer.WriteLine("    }");
                         writer.WriteLine("}");
